@@ -1,0 +1,346 @@
+body{
+    background-color: black;
+}
+#main{
+    width: 70%;
+    margin: 5rem auto;
+    height: 1500px;
+}
+
+.btn-square {
+    margin-top: 800px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+.btn-square:active {
+    /*ボタンを押したとき*/
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+}
+h2 {
+    position: relative;
+    background: #ffffff;
+    box-shadow: 0px 0px 0px 5px #ffffff;
+    border: dashed 2px rgb(104, 27, 27);
+    padding: 0.2em 0.5em;
+    color: #454545;
+}
+h2::after {
+    position: absolute;
+    content: '';
+    left: -7px;
+    top: -7px;
+    border-width: 0 0 15px 15px;
+    border-style: solid;
+    border-color: #fff #fff #b7b7b7;
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.348);
+}
+.ribbon {
+    display: inline-block;
+    position: relative;
+    height: 60px;/*高さ*/
+    line-height: 60px;/*行の高さ*/
+    text-align: center;
+    padding: 0 40px 0 18px;/*文字の左右の余白*/
+    font-size: 48px;/*文字サイズ*/
+    background: rgb(101, 2, 2);/*背景色*/
+    color: #FFF;/*文字色*/
+}
+.ribbon::after {
+    position: absolute;
+    content: '';
+    width: 0px;
+    height: 0px;
+    top: 0;
+    right: 0;
+    border-width: 30px 15px 30px 0px;
+    border-color: transparent #fff transparent transparent;
+    border-style: solid;
+}
+.comment {
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #000000;
+    font-size: 18px;
+    background: #ffffff;
+}
+.comment::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -110px;
+    border: 15px solid transparent;
+    border-top: 15px solid #ffffff;
+}
+.comment p {
+    margin: 0;
+}
+.card {
+    display: inline-block;
+    margin: 10px;
+    background-color: rgb(101, 2, 2);
+}
+.cardbox {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #ffffffea;
+}
+/* Navbar & Navmenu color */
+:root {
+    --background-navbar: rgb(101, 2, 2);
+    --header: 52px;
+    scroll-padding: calc(var(--header) + 80px);
+  }
+  .header {
+    background: var(--background-navbar);
+    position: fixed;
+    width: 100%;
+    height: 52px;
+    top: 0; /*上辺からの距離を0に設定*/
+    z-index: 10; /*要素の重なり順を指定*/
+  }
+  /* Nav items */
+  .menu {
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    margin-top: 52px;
+    padding: 0 0 10px 0;
+    clear: both;
+    background: var(--background-navbar);
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+    transform: scale(1, 0);
+    transform-origin: top;
+  }
+  /* Hamburger menu button */
+  .menu-btn:checked ~ .menu {
+    transform: scale(1, 1);
+    transform-origin: top;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
+  /* Hamburger menbu text */
+  .menu a {
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ddd;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .menu li {
+    border-top: 1px solid rgb(75, 75, 75);
+    padding: 15px 0;
+    margin: 0 54px;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .menu-btn:checked ~ .menu a,
+  .menu-btn:checked ~ .menu li {
+    opacity: 1;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
+  }
+  .menu-btn {
+    display: none;
+  }
+  .menu-icon {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding: 24px 14px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  .navicon {
+    background: #ddd;
+    display: block;
+    height: 3px;
+    width: 26px;
+    position: relative;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
+  .navicon:before,
+  .navicon:after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: #ddd;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
+  .navicon:before {
+    top: 9px;
+  }
+  .navicon:after {
+    bottom: 9px;
+  }
+  /* Hamburger Menu Animation Start */
+  .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
+    top: 0;
+  }
+  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    bottom: 0;
+  }
+  .menu-btn:checked ~ .menu-icon .navicon {
+    background: rgba(0, 0, 0, 0);
+    transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
+  /* Hamburger Menu Animation End */
+  /* Navbar Container */
+  .navtext-container {
+    width: 100%;
+    height: 52px;
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Navbar Text */
+  .navtext {
+    position: absolute;
+    text-transform: uppercase;
+    color: #ddd;
+    letter-spacing: 4px;
+    font-size: 20px;
+  }
+  .box-inner{
+    margin: 100px 0;
+}
+.box{
+    display: block; /*<img>をブロック要素として表示*/
+    position: relative;
+    width: 50%;
+    margin: 100px auto;
+}  
+.fade-in {
+    opacity: 0; /*"scroll-in"クラスが追加されるまで非表示*/
+    transition-duration: 500ms;
+    transition-property: opacity, transform;
+}  
+.fade-in-up {
+    transform: translate(0, 50px);
+}  
+.fade-in-down {
+    transform: translate(0, -50px);
+}  
+.fade-in-left {
+    transform: translate(-50px, 0);
+}  
+.fade-in-right {
+    transform: translate(50px, 0);
+}  
+.scroll-in {
+    opacity: 1; /*"scroll-in"クラスが追加されたら表示*/
+    transform: translate(0, 0);
+}
+
+.btn-12{
+  position: relative;
+  right: 20px;
+  bottom: 20px;
+  border:none;
+  box-shadow: none;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  -webkit-perspective: 230px;
+  perspective: 230px;
+}
+.btn-12 span {
+  background: rgb(152, 152, 152);
+background: linear-gradient(0deg, rgb(105, 105, 105) 0%, rgb(218, 218, 218) 100%);
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  border-radius: 5px;
+  margin:0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.btn-12 span:nth-child(1) {
+  /* box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001; */
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+}
+.btn-12 span:nth-child(2) {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+}
+.btn-12:hover span:nth-child(1) {
+  /* box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1); */
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+.btn-12:hover span:nth-child(2) {
+  /* box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1); */
+ color: transparent;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   /* box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1); */
+  outline: none;
+}
